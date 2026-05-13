@@ -23,4 +23,12 @@ public class Atleta extends MembroComite {
 		return "Atleta: {" + super.exibirDados() + 
 				", modalidade=" + this.getModalidade().toString() + "}";
 	}
+	
+	@Override
+	public boolean equals(Object membro) {
+		return this == membro || 
+				(super.equals(membro) && 
+				membro instanceof Atleta a &&
+				a.getModalidade().equals(this.modalidade));
+	}
 }

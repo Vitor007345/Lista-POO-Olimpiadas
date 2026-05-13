@@ -22,4 +22,12 @@ public class ProfissionalSaude extends MembroComite {
 				", especialidade=" + this.getEspecialidade() + "}";
 	}
 	
+	@Override
+	public boolean equals(Object membro) {
+		return this == membro || 
+				(super.equals(membro) && 
+				membro instanceof ProfissionalSaude ps && 
+				ps.getEspecialidade().equals(this.getEspecialidade()));
+	}
+	
 }

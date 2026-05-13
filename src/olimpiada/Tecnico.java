@@ -33,6 +33,18 @@ public class Tecnico extends MembroComite {
 				", atividade=" + this.getAtividade() + 
 				", modalidade=" + this.getModalidade().toString() + "}";
 	}
+
+	@Override
+	public boolean equals(Object membro) {
+		return this == membro || 
+				(super.equals(membro) && 
+				membro instanceof Tecnico t && 
+				t.getAtividade().equals(this.getAtividade()) &&
+				t.getModalidade().equals(this.modalidade));
+	}
+	
+	
+	
 	
 	
 	
